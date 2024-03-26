@@ -2,10 +2,18 @@ html,
 body {
     color: var(--text-color);
     font-family: var(--font-outfit);
-}
 
-.App {
-    width: 80%;
-    margin: 0 auto;
-}
+    .App {
+        width: 80%;
+        margin: 0 auto;
+    }
 
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}

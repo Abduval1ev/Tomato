@@ -1,13 +1,21 @@
 :root {
     // text-colors
+    --white: #fff;
     --text-color: #49557e;
     --tomato-color: tomato;
+    --btn-color: #747474;
+    --heading-color: #262626;
+    --smoll-text-color: #808080;
+    --hr-color: #e2e2e2;
     // font-size
     --font-size-16: 16px;
     --font-size-18: 18px;
+    --font-size-30: 30px;
     // font-family
     --font-outfit: 'Outfit', sans-serif;
     // :hover
     --text-hover: #949494;
     --btn-hover: #fff4f2;
+    // clamp-width
+    --img-30-20: clamp(20px, 1.071rem + 0.89vw, 30px);
 }

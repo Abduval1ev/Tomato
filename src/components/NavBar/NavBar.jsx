@@ -16,13 +16,13 @@ export default function NavBar() {
             />
             <ul className='nav_menu'>
                 <li>
-                    <NavLink
+                    <NavLink to={'/'}
                         className='nav_list'>
                         home
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink
+                    <NavLink to={'/order'}
                         className='nav_list'>
                         menu
                     </NavLink>
