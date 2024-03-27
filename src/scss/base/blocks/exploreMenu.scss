@@ -35,13 +35,16 @@
     display: none;
 }
 
+.menu_list_item {
+    width: 220px;
+}
 
-.menu_list_item_image {
+.menu_list_item img {
     width: 7.5vw;
     min-width: 80px;
     cursor: pointer;
     border-radius: 50%;
-    transition: .2s;
+    transition: 0.2s ease;
 }
 
 .menu_list_item_name {
@@ -49,4 +52,10 @@
     margin: 10px 0 0;
     font-size: max(1.4vw, 16px);
     cursor: pointer;
+}
+
+.menu_list_item .active {
+    padding: 2px;
+    border: 4px solid var(--tomato-color);
+    border-radius: 50%;
 }

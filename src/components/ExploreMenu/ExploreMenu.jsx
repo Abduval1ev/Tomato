@@ -2,8 +2,8 @@ import React from 'react'
 import { menu_list } from '../../assets/assets'
 import ExploreCard from '../EploreCard/ExploreCard';
 
-export default function ExploreMenu() {
-    console.log(menu_list);
+export default function ExploreMenu({ category, setCategory }) {
+
     return (
         <>
             <div className="explore_menu" id="explore_menu">
@@ -13,9 +13,16 @@ export default function ExploreMenu() {
                     {
                         menu_list.map((item, index) => {
                             return (
-                                <div key={index} className="menu_list_item">
+                                <div
+                                    onClick={() =>
+                                        setCategory(
+                                            prev => prev === item.menu_name ? 'All' : item.menu_name
+                                        )}
+                                    key={index}
+                                    className="menu_list_item"
+                                >
                                     <img
-                                        className='menu_list_item_image'
+                                        className={category === item.menu_name ? 'active' : ''}
                                         src={item.menu_image}
                                         alt="Image"
                                     />

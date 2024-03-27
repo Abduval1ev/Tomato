@@ -4,9 +4,6 @@ import { NavLink } from 'react-router-dom'
 
 export default function NavBar() {
 
-    // const active = 'nav_list';
-    // const normalLink = 'nav_list nav_list__active';
-
     return (
         <div className='nav'>
             <img
