@@ -1,9 +1,15 @@
 import React from 'react'
 import { assets } from '../../assets/assets'
+import { useContext } from 'react'
+import { StoreContext } from '../context/StoreContext'
 
 export default function FoodItem({ id, name, image, price, description }) {
 
-    const [itemCount, setItemCount] = React.useState(0)
+    const {
+        cartItems,
+        setCartItems,
+        addToCart,
+        removeFormCart } = useContext(StoreContext)
 
     return (
         <div className='food_item'>
@@ -12,23 +18,23 @@ export default function FoodItem({ id, name, image, price, description }) {
                     src={image} alt="Image"
                     className='food_item_image'
                 />
-                {!itemCount
+                {!cartItems[id]
                     ?
                     <img
                         className='add'
-                        onClick={() => setItemCount(prev => prev + 1)}
+                        onClick={() => addToCart(id)}
                         src={assets.add_icon_white}
                         alt='Icon'
                     /> :
                     <div className='food_item_counter'>
                         <img
-                            onClick={() => setItemCount(prev => prev + 1)}
+                            onClick={() => removeFormCart(id)}
                             src={assets.remove_icon_red}
                             alt="Icon"
                         />
-                        <span>{itemCount}</span>
+                        <span>{cartItems[id]}</span>
                         <img
-                            onClick={() => setItemCount(prev => prev + 1)}
+                            onClick={() => addToCart(id)}
                             src={assets.add_icon_green}
                             alt="" />
                     </div>
