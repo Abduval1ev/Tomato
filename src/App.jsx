@@ -7,12 +7,19 @@ import ContactsContact from './components/ContactsContact/ContactsContact'
 import Cart from './Pages/Cart'
 import PlaceOrder from './Pages/PlaceOrder'
 import NotFound from './Pages/NotFound'
+import LoginPopup from './components/LoginPopup/LoginPopup'
 
 export default function App() {
+
+  const [login, setLogin] = React.useState(false)
+
   return (
     <>
+      {
+        login ? <LoginPopup setLogin={setLogin} /> : <></>
+      }
       <div className='App'>
-        <NavBar />
+        <NavBar setLogin={setLogin} />
         <Routes>
           <Route element={<Home />} path='/' />
           <Route element={<Cart />} path='/cart' />

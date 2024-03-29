@@ -12,11 +12,12 @@
 }
 
 .nav_menu {
+    top: 10px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: clamp(10px, -0.089rem + 1.49vw, 20px);
 
-    @include tablet_xl {
+    @include tablet_768 {
         display: none;
     }
 }
@@ -34,7 +35,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: clamp(10px, -0.035rem + 2.82vw, 40px);
 }
 
 .search_icon {
@@ -64,8 +65,8 @@
     color: var(--text-color);
     border: 1px solid var(--tomato-color);
     border-radius: 50px;
-    padding: 10px 30px;
-    font-size: var(--font-size-16);
+    padding: 10px clamp(10px, 0.185rem + 1.88vw, 30px);
+    font-size: clamp(12px, 0.662rem + 0.38vw, 16px);
     background: transparent;
     transition: .3s ease;
 }
