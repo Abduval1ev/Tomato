@@ -13,7 +13,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 80px;
+    gap: clamp(20px, -1.835rem + 7.59vw, 80px);
 }
 
 .logo {
@@ -40,7 +40,7 @@
 
 .footer_heading {
     color: var(--white);
-    font-size: 28px;
+    font-size: clamp(14px, 0.567rem + 1.31vw, 28px);
     font-weight: 600;
 }
 
@@ -49,4 +49,17 @@ hr {
     height: 2px;
     margin: 20px 0;
     background-color: var(--smoll-text-color);
+}
+
+@include tablet_650 {
+    .footer_content {
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+
+    .footer_content_left {}
+
+    .footer_content_center {}
+
+    .footer_content_right {}
 }

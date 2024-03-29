@@ -2,7 +2,7 @@ import React from 'react'
 import { assets } from '../../assets/assets'
 import { NavLink } from 'react-router-dom'
 
-export default function NavBar() {
+export default function NavBar({ setLogin }) {
 
     return (
         <div className='nav'>
@@ -19,22 +19,22 @@ export default function NavBar() {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/order'}
+                    <a href={'#explore_menu'}
                         className='nav_list'>
                         menu
-                    </NavLink>
+                    </a>
                 </li>
                 <li>
-                    <NavLink
+                    <a href={'#app_download'}
                         className='nav_list'>
                         mobile-app
-                    </NavLink>
+                    </a>
                 </li >
                 <li>
-                    <NavLink
+                    <a href={'#footer'}
                         className='nav_list'>
                         contacts-us
-                    </NavLink>
+                    </a>
                 </li>
             </ul >
             <div className='nav_right'>
@@ -51,7 +51,11 @@ export default function NavBar() {
                     />
                     <div className='dot'></div>
                 </div>
-                <button className='sign_in'>Sign in</button>
+                <button
+                    className='sign_in'
+                    onClick={() => setLogin(true)}>
+                    Sign in
+                </button>
             </div>
         </div >
     )
