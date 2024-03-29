@@ -10,15 +10,17 @@ import NotFound from './Pages/NotFound'
 
 export default function App() {
   return (
-    <div className='App'>
-      <NavBar />
-      <Routes>
-        <Route element={<Home />} path='/' />
-        <Route element={<Cart />} path='/cart' />
-        <Route element={<PlaceOrder />} path='/order' />
-        <Route element={<NotFound />} path='*' />
-      </Routes>
+    <>
+      <div className='App'>
+        <NavBar />
+        <Routes>
+          <Route element={<Home />} path='/' />
+          <Route element={<Cart />} path='/cart' />
+          <Route element={<PlaceOrder />} path='/order' />
+          <Route element={<NotFound />} path='*' />
+        </Routes>
+      </div>
       <Footer />
-    </div>
+    </>
   )
 }
