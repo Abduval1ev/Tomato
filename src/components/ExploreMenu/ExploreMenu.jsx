@@ -11,7 +11,7 @@ export default function ExploreMenu({ category, setCategory }) {
                 <p className='explore_menu_text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, deleniti.</p>
                 <div className="explore_menu_list">
                     {
-                        menu_list.map((item, index) => {
+                        menu_list.length ? (menu_list.map((item, index) => {
                             return (
                                 <div
                                     onClick={() =>
@@ -29,7 +29,7 @@ export default function ExploreMenu({ category, setCategory }) {
                                     <h3 className='menu_list_item_name'>{item.menu_name}</h3>
                                 </div>
                             )
-                        })
+                        })) : <p>No Menu lists!!</p>
                     }
                 </div>
                 <hr />
