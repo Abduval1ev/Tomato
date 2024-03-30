@@ -7,7 +7,6 @@ export default function FoodItem({ id, name, image, price, description }) {
 
     const {
         cartItems,
-        setCartItems,
         addToCart,
         removeFormCart } = useContext(StoreContext)
 
@@ -36,21 +35,28 @@ export default function FoodItem({ id, name, image, price, description }) {
                         <img
                             onClick={() => addToCart(id)}
                             src={assets.add_icon_green}
-                            alt="" />
+                            alt="Icon"
+                        />
                     </div>
                 }
             </div>
             <div className="food_item_info">
                 <div className="food_item_name_rating">
-                    <p className='food_item_name'>{name}</p>
+                    <p className='food_item_name'>
+                        {name}
+                    </p>
                     <img
                         className='food_item_rating'
                         src={assets.rating_starts}
                         alt="Stars"
                     />
                 </div>
-                <p className="food_item_desc">{description}</p>
-                <span className='food_item_price'>${price}</span>
+                <p className="food_item_desc">
+                    {description}
+                </p>
+                <span className='food_item_price'>
+                    ${price}
+                </span>
             </div>
         </div>
     )

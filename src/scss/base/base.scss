@@ -3,6 +3,12 @@ body {
     // color: var(--text-color);
     font-family: var(--font-outfit);
 
+    .login_register_text {
+        color: var(--tomato-color);
+        cursor: pointer;
+        font-weight: 400;
+    }
+
     .App {
         width: 80%;
         margin: 0 auto;

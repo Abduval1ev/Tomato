@@ -40,15 +40,34 @@ export default function LoginPopup({ setLogin }) {
                             required
                         />
                     </div>
-                    <button className='login_popup_btn'>{currState === 'Sign Up' ? 'Create account' : 'Login'}</button>
+                    <button
+                        className='login_popup_btn'>
+                        {currState === 'Sign Up'
+                            ?
+                            'Create account'
+                            :
+                            'Login'}
+                    </button>
                     <div className="login_popup_condition">
-                        <input type="checkbox" required />
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, aut!</p>
+                        <input className='login_popup_checkbox' type="checkbox" required />
+                        <p>Lorem ipsum dolor sit amet.</p>
                     </div>
                     {
                         currState === 'Login' ?
-                            <p>Create a new account?<span onClick={() => setCurrState('Sign Up')}>Click here</span></p> :
-                            <p>Already have account? <span onClick={() => setCurrState('Login')}>Login here</span></p>
+                            <p>
+                                Create a new account?
+                                <span className='login_register_text' onClick={() =>
+                                    setCurrState('Sign Up')}>
+                                    Click here
+                                </span>
+                            </p> :
+                            <p>
+                                Already have account?
+                                <span className='login_register_text' onClick={() =>
+                                    setCurrState('Login')}>
+                                    Login here
+                                </span>
+                            </p>
                     }
                 </form>
             </div>

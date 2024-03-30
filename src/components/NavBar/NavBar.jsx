@@ -1,16 +1,18 @@
 import React from 'react'
 import { assets } from '../../assets/assets'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function NavBar({ setLogin }) {
 
     return (
         <div className='nav'>
-            <img
-                className='nav_logo'
-                src={assets.logo}
-                alt="Logo"
-            />
+            <Link to={'/'}>
+                <img
+                    className='nav_logo'
+                    src={assets.logo}
+                    alt="Logo"
+                />
+            </Link>
             <ul className='nav_menu'>
                 <li>
                     <NavLink to={'/'}
@@ -44,11 +46,13 @@ export default function NavBar({ setLogin }) {
                     alt="Icon"
                 />
                 <div className='nav_basket_icon'>
-                    <img
-                        className='basket_icon'
-                        src={assets.basket_icon}
-                        alt="Icon"
-                    />
+                    <Link to={'/cart'}>
+                        < img
+                            className='basket_icon'
+                            src={assets.basket_icon}
+                            alt="Icon"
+                        />
+                    </Link>
                     <div className='dot'></div>
                 </div>
                 <button

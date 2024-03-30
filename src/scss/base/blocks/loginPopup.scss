@@ -57,3 +57,14 @@
     background: var(--tomato-color);
     font-size: var(--font-siae-16);
 }
+
+.login_popup_condition {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: -15px 0 0;
+}
+
+.login_popup_checkbox {
+    margin: 5px 0 0;
+}
