@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { assets } from '../../assets/assets'
 import { Link, NavLink } from 'react-router-dom'
+import { StoreContext } from '../context/StoreContext'
 
 export default function NavBar({ setLogin }) {
+
+    const { getTotalCartAmount } = React.useContext(StoreContext)
 
     return (
         <div className='nav'>
@@ -53,7 +56,9 @@ export default function NavBar({ setLogin }) {
                             alt="Icon"
                         />
                     </Link>
-                    <div className='dot'></div>
+                    <div
+                        className={getTotalCartAmount() === 0 ? '' : 'dot'}>
+                    </div>
                 </div>
                 <button
                     className='sign_in'

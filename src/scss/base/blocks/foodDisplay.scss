@@ -11,6 +11,5 @@
 .food_dispaly_list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-template-rows: minmax(30px, 300px);
     gap: 50px 30px;
 }

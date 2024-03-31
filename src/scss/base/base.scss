@@ -9,6 +9,10 @@ body {
         font-weight: 400;
     }
 
+    hr {
+        background: var(--hr-color);
+    }
+
     .App {
         width: 80%;
         margin: 0 auto;
