@@ -1,9 +1,32 @@
 import React from 'react'
 import { StoreContext } from '../components/context/StoreContext';
+import { useNavigate } from 'react-router';
 
 export default function Cart() {
 
+  function getStorageValue(key, defaultValue) {
+    const saved = localStorage.getItem(key)
+    const initial = JSON.parse(saved)
+    return initial || defaultValue
+  }
+
+  const useLocalStorage = (key, defaultValue) => {
+    const [value, setValue] = React.useState(() => {
+      return getStorageValue(key, defaultValue)
+    })
+    return [value, setValue]
+  }
+
+  React.useEffect(() => {
+    localStorage.setItem('key', JSON.stringify(index))
+  }, [index, setValue])
+
+  const [key, index] = useLocalStorage(cartItems, [item._id])
+
+
   const { cartItems, food_list, removeFormCart, getTotalCartAmount } = React.useContext(StoreContext)
+
+  const navigation = useNavigate()
 
   return (
     <div className="cart">
@@ -49,7 +72,7 @@ export default function Cart() {
       <div className="cart_bottom">
         <div className="cart_total">
           <h2>Cart Totals</h2>
-          <div className="">
+          <div>
             <div className="cart_total_details">
               <p>Subtotal</p>
               <p>${getTotalCartAmount()}</p>
@@ -57,15 +80,15 @@ export default function Cart() {
             <hr className='cart_total_hr' />
             <div className="cart_total_details">
               <p>Deliver Fee</p>
-              <p>${2}</p>
+              <p>${getTotalCartAmount() === 0 ? 0 : 2}</p>
             </div>
             <hr className='cart_total_hr' />
             <div className="cart_total_details">
               <b>Total</b>
-              <b>${getTotalCartAmount() + 2}</b>
+              <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
             </div>
           </div>
-          <button className='cart_total_btn'>PROCEED TO CHECKOUT</button>
+          <button onClick={() => navigation('/order')} className='cart_total_btn'>PROCEED TO CHECKOUT</button>
         </div>
         <div className="cart_promocode">
           <div>
